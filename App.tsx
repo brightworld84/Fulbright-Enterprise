@@ -1,26 +1,11 @@
 // App.tsx
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import AppNavigator from "./navigation/AppNavigator";
-import { ToastProvider } from "./contexts/ToastContext";
-import { AuthProvider } from "./contexts/AuthContext";
-import { MedicalRecordProvider } from "./contexts/MedicalRecordContext";
-import { AccessibilityProvider } from "./contexts/AccessibilityContext";
+import { View, Text } from "react-native";
 
 export default function App() {
   return (
-    <ToastProvider>
-      <AuthProvider>
-        <MedicalRecordProvider>
-          <AccessibilityProvider>
-            <NavigationContainer>
-              <AppNavigator />
-            </NavigationContainer>
-          </AccessibilityProvider>
-        </MedicalRecordProvider>
-      </AuthProvider>
-    </ToastProvider>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Hello World</Text>
+    </View>
   );
 }
-

@@ -1,7 +1,6 @@
 workflows:
   expo-app:
     name: Build Expo App
-    instance_type: linux
     environment:
       node: 18.16.0
       vars: 

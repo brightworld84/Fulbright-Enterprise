@@ -9,7 +9,7 @@ workflows:
       - name: Install dependencies
         script: yarn install
       - name: Install Expo CLI
-        script: npm install -g expo-cli
+        script: npm install -g expo
       - name: Build Expo app
         script: expo export --output-dir=dist
     artifacts:

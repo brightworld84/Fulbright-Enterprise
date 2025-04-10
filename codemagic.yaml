@@ -5,19 +5,25 @@ workflows:
       node: 18.18.0
       vars:
         EXPO_TOKEN: $EXPO_TOKEN
+        EAS_ACCESS_TOKEN: $EAS_ACCESS_TOKEN
     scripts:
-    - name: Check if tokens are available
-  script: |
-    echo "EXPO_TOKEN=${EXPO_TOKEN:0:4}****"
-    echo "EAS_ACCESS_TOKEN=${EAS_ACCESS_TOKEN:0:4}****"
       - name: Install dependencies
         script: yarn install
+
       - name: Install EAS CLI
         script: npm install -g eas-cli
+
+      - name: Check if tokens are available
+        script: |
+          echo "EXPO_TOKEN=${EXPO_TOKEN:0:4}****"
+          echo "EAS_ACCESS_TOKEN=${EAS_ACCESS_TOKEN:0:4}****"
+
       - name: Build Android App
         script: eas build --platform android --non-interactive --profile production
+
       - name: Build iOS App
         script: eas build --platform ios --non-interactive --profile production
+
     artifacts:
       - build/**/*
       - .eas/build/**/*

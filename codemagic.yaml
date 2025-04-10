@@ -6,6 +6,10 @@ workflows:
       vars:
         EXPO_TOKEN: $EXPO_TOKEN
     scripts:
+    - name: Check if tokens are available
+  script: |
+    echo "EXPO_TOKEN=${EXPO_TOKEN:0:4}****"
+    echo "EAS_ACCESS_TOKEN=${EAS_ACCESS_TOKEN:0:4}****"
       - name: Install dependencies
         script: yarn install
       - name: Install EAS CLI

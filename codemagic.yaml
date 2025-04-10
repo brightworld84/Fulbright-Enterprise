@@ -2,7 +2,7 @@ workflows:
   expo-app:
     name: Build Expo App
     environment:
-      node: 18.16.0
+      node: 18.18.0
       vars: 
         EXPO_TOKEN: $EXPO_TOKEN
     scripts:

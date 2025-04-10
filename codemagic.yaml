@@ -10,7 +10,6 @@ workflows:
         EXPO_ANDROID_KEY_PASSWORD: $EXPO_ANDROID_KEY_PASSWORD
         EXPO_ANDROID_KEY_ALIAS: $EXPO_ANDROID_KEY_ALIAS
       node: 18
-      yarn: false
     scripts:
       - name: Install Expo CLI
         script: npm install -g expo-cli

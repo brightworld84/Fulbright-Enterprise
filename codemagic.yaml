@@ -1,11 +1,11 @@
 workflows:
   expo-app:
     name: Build Expo App
-    instance_type: linux_x2
+    instance_type: linux_x2   # ✅ Free plan
     environment:
+      node: 18.16.0
       vars:
         EXPO_TOKEN: $EXPO_TOKEN
-      node: 18.16.0
     scripts:
       - name: Install dependencies
         script: yarn install
@@ -15,3 +15,4 @@ workflows:
         script: expo export --output-dir=dist
     artifacts:
       - dist/**/*
+

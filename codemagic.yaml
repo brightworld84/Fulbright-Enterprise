@@ -1,16 +1,19 @@
 workflows:
   expo-app:
-    name: Build Expo App
+    name: Build Expo App (Android & iOS)
     environment:
       node: 18.18.0
-      vars: 
+      vars:
         EXPO_TOKEN: $EXPO_TOKEN
     scripts:
       - name: Install dependencies
         script: yarn install
-      - name: Install Expo CLI
-        script: npm install -g expo
-      - name: Build Expo app
-        script: expo export --output-dir=dist
+      - name: Install EAS CLI
+        script: npm install -g eas-cli
+      - name: Build Android App
+        script: eas build --platform android --non-interactive --profile production
+      - name: Build iOS App
+        script: eas build --platform ios --non-interactive --profile production
     artifacts:
-      - dist/**/*
+      - build/**/*
+      - .eas/build/**/*
